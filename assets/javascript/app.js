@@ -33,10 +33,9 @@ $(".button-holder").on("click", ".topButton", function() {
   $(".row2").html("");
   $(".row3").html("");
   buttonInput = this.textContent;
-  buttonURL = `http://api.giphy.com/v1/gifs/search?q=${buttonInput}&api_key=1HmF2ApULJrVnZjcuLpVIaVwjx8w6ZCi&limit=${limit}`;
+  buttonURL = `https://api.giphy.com/v1/gifs/search?q=${buttonInput}&api_key=1HmF2ApULJrVnZjcuLpVIaVwjx8w6ZCi&limit=${limit}`;
   $.ajax(buttonURL).then(function(response) {
     buttonResponseArr = response.data;
-    console.log(buttonResponseArr);
     renderGifs(buttonResponseArr);
   });
 });
@@ -60,7 +59,7 @@ function renderGifs(array) {
     if (i < 3) {
       $(
         ".row1"
-      )[0].innerHTML += `<div class="col-4"><p mb-5>${array[i].title}</p><img
+      )[0].innerHTML += `<div class="col-4"><p>${array[i].title}</p><img
       src="${array[i].images.fixed_height_small.url}"
       alt="${array[i].images.fixed_height_small_still.url}"
       data-alt="${array[i].images.fixed_height_small.url}"
@@ -73,7 +72,7 @@ function renderGifs(array) {
     if (i > 3 && i < 7) {
       $(
         ".row2"
-      )[0].innerHTML += `<div class="col-4"><p mb-5>${array[i].title}</p><img
+      )[0].innerHTML += `<div class="col-4"><p mb-5 font-weight-bold>${array[i].title}</p><img
       src="${array[i].images.fixed_height_small.url}"
       alt="${array[i].images.fixed_height_small_still.url}"
       data-alt="${array[i].images.fixed_height_small.url}"
