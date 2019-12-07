@@ -59,7 +59,7 @@ function renderGifs(array) {
     if (i < 3) {
       $(
         ".row1"
-      )[0].innerHTML += `<div class="col-4"><p>${array[i].title}</p><img
+      )[0].innerHTML += `<div class="col-4"><p class="font-weight-bold text-center">${array[i].title}</p><img
       src="${array[i].images.fixed_height_small.url}"
       alt="${array[i].images.fixed_height_small_still.url}"
       data-alt="${array[i].images.fixed_height_small.url}"
@@ -72,7 +72,7 @@ function renderGifs(array) {
     if (i > 3 && i < 7) {
       $(
         ".row2"
-      )[0].innerHTML += `<div class="col-4"><p mb-5 font-weight-bold>${array[i].title}</p><img
+      )[0].innerHTML += `<div class="col-4"><p class="font-weight-bold text-center">${array[i].title}</p><img
       src="${array[i].images.fixed_height_small.url}"
       alt="${array[i].images.fixed_height_small_still.url}"
       data-alt="${array[i].images.fixed_height_small.url}"
@@ -84,7 +84,7 @@ function renderGifs(array) {
     } else if (i > 7) {
       $(
         ".row3"
-      )[0].innerHTML += `<div class="col-4"><p mb-5>${array[i].title}</p><img
+      )[0].innerHTML += `<div class="col-4"><p class="font-weight-bold text-center">${array[i].title}</p><img
       src="${array[i].images.fixed_height_small.url}"
       alt="${array[i].images.fixed_height_small_still.url}"
       data-alt="${array[i].images.fixed_height_small.url}"
